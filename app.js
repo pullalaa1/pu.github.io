@@ -15,7 +15,7 @@ let btn = document.getElementById("btn");
 
 // Функция для получения IP-адреса пользователя
 function getIpAddress() {
-    alert("asd);
+    console.log('test');
     fetch("https://api.ipify.org?format=json")
         .then(response => response.json())
         .then(data => {
