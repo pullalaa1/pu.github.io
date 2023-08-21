@@ -4,7 +4,7 @@ let tg = window.Telegram.WebApp;
 
 tg.expand();
 
-tg.MainButton.textColor = "FFFFFF";
+tg.MainButton.textColor = "#ffffff";
 tg.MainButton.color = "#2cab37";
 
 let name = document.getElementById("name");
