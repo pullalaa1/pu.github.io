@@ -1,3 +1,5 @@
+// script.js
+
 let tg = window.Telegram.WebApp;
 
 tg.expand();
@@ -5,25 +7,35 @@ tg.expand();
 tg.MainButton.textColor = "FFFFFF";
 tg.MainButton.color = "#2cab37";
 
-leg item = "";
-
 let name = document.getElementById("name");
 let age = document.getElementById("age");
 let gender = document.getElementById("gender");
 
 let btn = document.getElementById("btn");
 
-btn.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
-      window.alert("Hello world!");
-      if (tg.MainButton.isVisible){ //если кнопка показана 
-         tg.MainButton.hide() //скрываем кнопку 
-      }
-      else{ //иначе
-         tg.MainButton.show() //показываем 
-      }
-   });
+// Функция для получения IP-адреса пользователя
+function getIpAddress() {
+    fetch("https://api.ipify.org?format=json")
+        .then(response => response.json())
+        .then(data => {
+            const ipAddress = data.ip;
+            document.getElementById("ip-address").textContent = "Your IP address is: " + ipAddress;
+        })
+        .catch(error => {
+            console.error("An error occurred:", error);
+        });
+}
 
-Telegram.WebApp.onEvent('mainButtonClicked', function(){
-      tg.sendData("some string that we need to send"); 
-      //при клике на основную кнопку отправляем данные в строковом виде
-   });
+btn.addEventListener('click', function() {
+    window.alert("Hello world!");
+    getIpAddress(); // Получение и отображение IP-адреса
+    if (tg.MainButton.isVisible) {
+        tg.MainButton.hide();
+    } else {
+        tg.MainButton.show();
+    }
+});
+
+tg.onEvent('mainButtonClicked', function() {
+    tg.sendData("some string that we need to send");
+});
