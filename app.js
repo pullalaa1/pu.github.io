@@ -1,6 +1,6 @@
 let tg = window.Telegram.WebApp;
 
-tg.expand()
+tg.expand();
 
 tg.MainButton.textColor = "FFFFFF";
 tg.MainButton.color = "#2cab37";
@@ -16,6 +16,7 @@ let btn_register = document.getElementById("btn_register");
 btn_register.addEventListener("click", function(){
 	tg.MainButton.setText("Соощение отправлено");
 	tg.MainButton.show()
+	tg.sendData("Test");
 	tg.sendData(name);
 	tg.sendData(age);
 	tg.sendData(gender);
