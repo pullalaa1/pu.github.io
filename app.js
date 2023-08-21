@@ -1,4 +1,4 @@
-// script.js
+// app.js
 
 let tg = window.Telegram.WebApp;
 
