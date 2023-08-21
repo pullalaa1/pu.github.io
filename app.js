@@ -11,7 +11,7 @@ let name = document.getElementById("name");
 let age = document.getElementById("age");
 let gender = document.getElementById("gender");
 
-let btn = document.getElementById("btn_register");
+let btn = document.getElementById("btn");
 
 btn.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
       if (tg.MainButton.isVisible){ //если кнопка показана 
