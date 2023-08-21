@@ -11,14 +11,18 @@ let name = document.getElementById("name");
 let age = document.getElementById("age");
 let gender = document.getElementById("gender");
 
-let btn_register = document.getElementById("btn_register");
+let btn = document.getElementById("btn_register");
 
-btn_register.addEventListener("click", function(){
-	alert("Hello");
-	tg.MainButton.setText("Соощение отправлено");
-	tg.MainButton.show()
-	tg.sendData("Test");
-	tg.sendData(name);
-	tg.sendData(age);
-	tg.sendData(gender);
-});
+btn.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
+      if (tg.MainButton.isVisible){ //если кнопка показана 
+         tg.MainButton.hide() //скрываем кнопку 
+      }
+      else{ //иначе
+         tg.MainButton.show() //показываем 
+      }
+   });
+
+Telegram.WebApp.onEvent('mainButtonClicked', function(){
+      tg.sendData("some string that we need to send"); 
+      //при клике на основную кнопку отправляем данные в строковом виде
+   });
