@@ -31,5 +31,5 @@ btn.addEventListener('click', function() {
     
    tg.MainButton.show();
     tg.sendData("Click");
-    alert("asd);
+    console.log('test2');
 });
