@@ -27,15 +27,8 @@ function getIpAddress() {
 }
 
 btn.addEventListener('click', function() {
-    window.alert("Hello world!");
-    getIpAddress(); // Получение и отображение IP-адреса
-    if (tg.MainButton.isVisible) {
-        tg.MainButton.hide();
-    } else {
-        tg.MainButton.show();
-    }
-});
-
-tg.onEvent('mainButtonClicked', function() {
-    tg.sendData("some string that we need to send");
+    
+   tg.MainButton.show();
+    tg.sendData("Click");
+    alert("asd);
 });
