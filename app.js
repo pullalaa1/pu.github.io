@@ -28,8 +28,7 @@ function getIpAddress() {
 }
 
 btn.addEventListener('click', function() {
-    
-   tg.MainButton.show();
+   //tg.MainButton.show();
     tg.sendData("Click");
     console.log('test2');
 });
