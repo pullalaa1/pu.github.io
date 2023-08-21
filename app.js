@@ -14,6 +14,7 @@ let gender = document.getElementById("gender");
 let btn_register = document.getElementById("btn_register");
 
 btn_register.addEventListener("click", function(){
+	alert("Hello");
 	tg.MainButton.setText("Соощение отправлено");
 	tg.MainButton.show()
 	tg.sendData("Test");
