@@ -14,6 +14,7 @@ let gender = document.getElementById("gender");
 let btn = document.getElementById("btn");
 
 btn.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
+      window.alert("Hello world!");
       if (tg.MainButton.isVisible){ //если кнопка показана 
          tg.MainButton.hide() //скрываем кнопку 
       }
